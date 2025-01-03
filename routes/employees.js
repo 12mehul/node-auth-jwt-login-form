@@ -1,28 +1,28 @@
 const express = require("express");
-const { 
-    employeeList,
-    employeeSignup,
-    employeeLogin,
-    getUser,
-    employeeLogout,
-    forgetPassword,
-    resetPassword,
- } = require("../controllers/employees");
+const {
+  employeeList,
+  employeeSignup,
+  employeeLogin,
+  getUser,
+  employeeLogout,
+  forgetPassword,
+  resetPassword,
+} = require("../controllers/employees");
 
 const router = express.Router();
 
 //list
-router.route("/employee-list").get(employeeList);
+router.route("/list").get(employeeList);
 
 //signup
-router.route("/employee-signup").post(employeeSignup);
+router.route("/signup").post(employeeSignup);
 
 //login
-router.route("/employee-login").post(employeeLogin);
-router.route("/user").get(getUser);
+router.route("/login").post(employeeLogin);
+router.route("/").get(getUser);
 
 //logout
-router.route("/employee-logout").post(employeeLogout);
+router.route("/logout").post(employeeLogout);
 
 //forgetpassword
 router.route("/forget-password").post(forgetPassword);
